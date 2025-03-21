@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, BarChart3, Code, LineChart, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -7,15 +8,15 @@ export default function Home() {
       {/* Navigation */}
       <nav className="border-b border-white/10 p-4">
         <div className="max-w-7xl mx-auto flex gap-8">
-          <a href="/" className="opacity-80 hover:opacity-100">
+          <Link href="/" className="opacity-80 hover:opacity-100">
             [h] Home
-          </a>
-          <a href="/api/docs" className="opacity-80 hover:opacity-100">
+          </Link>
+          <Link href="/api/docs" className="opacity-80 hover:opacity-100">
             [d] Docs
-          </a>
-          <a href="/dashboard" className="opacity-80 hover:opacity-100">
+          </Link>
+          <Link href="/dashboard" className="opacity-80 hover:opacity-100">
             [a] Analytics
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -81,7 +82,7 @@ export default function Home() {
                 <h3 className="font-bold">Lightning Fast</h3>
               </div>
               <p className="opacity-70 pl-8">
-                Zero impact on your site's performance
+                Zero impact on your site&apos;s performance
               </p>
             </div>
           </div>

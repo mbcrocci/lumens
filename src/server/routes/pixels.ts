@@ -1,11 +1,11 @@
 import "server-only";
 
-import { newPixelSchema, Pixel, pixelSchema } from "@/schemas/pixels";
+import { Pixel, pixelSchema } from "@/schemas/pixels";
+import { getBaseUrl } from "@/utils";
 import { createRoute, OpenAPIHono, z } from "@hono/zod-openapi";
+import { Context } from "hono";
 import DB_MUTATIONS from "../db/mutations";
 import DB_QUERIES from "../db/queries";
-import { Context } from "hono";
-import { getBaseUrl } from "@/utils";
 
 const app = new OpenAPIHono();
 
@@ -171,7 +171,7 @@ app.openapi(ingestRoute, async (c) => {
 export default app;
 
 const dataFromContext = async (c: Context): Promise<string> => {
-  const data: Record<string, any> = {};
+  const data: Record<string, unknown> = {};
 
   data.pixel_id = c.req.param("id");
   data.event = c.req.query("ev");
